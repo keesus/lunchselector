@@ -1,0 +1,18 @@
+{% if order_menu %}
+
+    <h1> 메뉴별 주문 수량 및 총액</h1>
+
+    {% for order in order_menu %}
+         {{ order.menu_text }} : {{ order.count }}개 <br>
+
+    {% endfor %}
+
+    총계 : {{ sum }}원
+    <br>
+
+   <a href="{% url 'reset' %}"> <input type="button" value="초기화"></a> <br>
+   <a href="{% url 'save_data' %}"><input type="button" value="저장 후 끝내기"></a>
+   <a href="{% url 'view_count' %}"><input type="button" value="메뉴별 총 선택횟수 보기"></a><br>
+
+{% endif %}
+

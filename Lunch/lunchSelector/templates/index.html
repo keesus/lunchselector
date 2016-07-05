@@ -1,0 +1,25 @@
+
+{{ date }}
+<h1>폼나게 먹자</h1>
+{% if menus%}
+<ul>
+
+  <form method = "POST" action="{% url 'submit' %}" enctype="multipart/form-data">
+    {%  csrf_token %}
+    {% for menu in menus %}
+
+        <input type="submit" name="choice" id="{{ forloop.counter }}" value="{{ menu.menu_text}}"/>
+
+
+    {% endfor %}
+  <br>
+
+        <a href="{% url 'menu_chooser' %}"><input type="button" value="결정장애는 누르시오"></a>
+
+  </form>
+</ul>
+{% else %}
+   df
+{% endif %}
+
+

@@ -1,0 +1,11 @@
+<h1>지금까지 선택한 메뉴의 총 횟수 입니다.</h1><br>
+
+{% if menus %}
+
+    {% for menu in menus %}
+        {{ menu.menu_text }} : {{ menu.count_permanent }}
+        <br>
+
+    {% endfor %}
+{% endif %}
+
